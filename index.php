@@ -1,1 +1,1 @@
-<?php include_once("navbar.html"); ?>
+<?php include_once("index.html"); ?>
