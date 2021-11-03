@@ -24,6 +24,7 @@ nav{
 
 
 .nav-links{
+    
     display: flex;
     justify-content: space-around;
     width: 30%;
@@ -39,6 +40,16 @@ nav{
     letter-spacing: 3px;
     font-weight: bold;
     font-size: 14px;
+}
+
+a{
+
+    text-decoration: none;
+    color: rgb(221, 221, 221);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+
 }
 
 .burger {
@@ -66,17 +77,17 @@ nav{
         overflow-x: hidden;
     }
     .nav-links{
-        position: absolute;
+        position: fixed;
         right: 0px;
         height: 92vh;
         top: 8vh;
         background-color: indigo;
-        display: flex;
+        display: none;
         flex-direction: column;
         align-items: center;
         width: 50%;
         transform: translateX(100%);
-        transition: transform 0.5s ease-in;
+        transition: transform 1s ease-in;
     }
 
     .nav-links li{
@@ -86,11 +97,21 @@ nav{
     .burger{
     display: block;
     }
+
+    nav{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        
+    }
     
 }
 
 .nav-active{
     transform: translateX(0%);
+    animation: mudaStatus 1.5s ease-in;
+    display: flex;
 }
 
 @keyframes navLinkFade {
@@ -104,19 +125,32 @@ nav{
     }
 }
 
+@keyframes mudaStatus {
+    from{
+        opacity: 0;
+        display: none;
+        right: -100px;
+    }
+    to{
+        opacity: 1;
+        display: flex;
+        right: 0;
+    }
+}
+
 .toggle .line1 {
     transform: rotate (-45deg) translate(-5px,6px);
 }
 
 .toggle .line2 {
-    opacity: 0;
+    transform: rotate (45deg) translate(-5px,-6px);
 }
 
 .toggle .line3 {
     transform: rotate (45deg) translate(-5px,-6px);
 }
 
-.container {   width: 100%;   padding-right: 15px;   padding-left: 15px;   margin-right: auto;   margin-left: auto; }  @media (min-width: 576px) {   .container {     max-width: 540px;   } }  @media (min-width: 768px) {   .container {     max-width: 720px;   } }  @media (min-width: 992px) {   .container {     max-width: 960px;   } }  @media (min-width: 1200px) {   .container {     max-width: 1140px;   } }
+.container { margin-top: 80px; width: 100%;   padding-right: 15px;   padding-left: 15px;   margin-right: auto;   margin-left: auto; }  @media (min-width: 576px) {   .container {     max-width: 540px;   } }  @media (min-width: 768px) {   .container {     max-width: 720px;   } }  @media (min-width: 992px) {   .container {     max-width: 960px;   } }  @media (min-width: 1200px) {   .container {     max-width: 1140px;   } }
 
 .bloco-texto {
     margin-top: 50px;
@@ -126,6 +160,7 @@ nav{
     font-size: 25px;
     margin-bottom: 50px;
     text-align: center;
+
 }
 
 .paragrafo {
@@ -135,6 +170,12 @@ nav{
 
 .subtitulo {
     font-size: 18px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.img {
+    font-size: 25px;
     margin-bottom: 50px;
     text-align: center;
 }
